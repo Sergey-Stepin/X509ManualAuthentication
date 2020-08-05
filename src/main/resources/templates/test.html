@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TestForm</title>
+    </head>
+
+    <body>
+        
+        <form 
+            enctype="multipart/form-data"
+            th:method="POST"
+            th:object="${testForm}"
+            th:action="@{/test}">
+            
+            <p/>Значение
+            <input type="text" th:field="*{name}"/>
+            
+            <p/>Важно:
+            <input type="checkbox" th:field="*{important}"/>
+
+            <p/>
+            <input type="submit" value="Submit"/>
+
+        </form>
+    </body>
+</html>
